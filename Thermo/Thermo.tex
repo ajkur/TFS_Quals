@@ -7,6 +7,7 @@
 \usepackage[pdftex]{graphicx}   
 \usepackage{url}
 \usepackage{array}
+\usepackage{parskip}
 
 %%% Custom sectioning
 \usepackage{sectsty}
@@ -56,32 +57,72 @@
 
 \section{Introductory Concepts and Definitions}
     
-    Extensive property - a property who's value for an overall system is the sum of its values for the parts into which the system is divided.
+Extensive property - a property who's value for an overall system is the sum of its values for the parts into which the system is divided.
 
-    Intensive property - a property who's value is independent of the size or extent of a system and may vary from place to place.
+Intensive property - a property who's value is independent of the size or extent of a system and may vary from place to place.
 
-    Property - a quantity is a property if and only if its change in value between two states is independent of the process.
+Property - a quantity is a property if and only if its change in value between two states is independent of the process.
 
 
 \section{Energy and the First Law of Thermodynamics}
-%     sign convention for work (p. 37, 6th ed.)
-%     difference between inexact and exact differentials (pp. 37-38, 6th ed.)
-%     sign convention for heat transfer (p. 48, 6th ed.)
-%     first law (p. 52, 6th ed.)
-%     definition of thermal efficiency (p. 66, 6th ed.)
-%     definition of coefficient of performance (p. 67, 6th ed.)
 
-% \section{Evaluating Properties}
-%     phase (p-T) diagram, identify solid, liquid, gas areas and critical and triple points (p. 84, 6th ed.)
-%     p-v diagram, be able to draw isotherms with T>T_c, T=T_c, T<T_c, label two-phase region, critical point, triple line (p. 84, 6th ed.)
-%     how does water differ from most substances?
-%     fluid quality (p. 87, 6th ed.)
-%     label vaporization, condensation, melting, sublimation, and freezing on phase diagram (p. 88, 6th ed.)
-%     definition (and justification of the use of) enthalpy (p. 95, p. 157, 6th ed.)
-%     definition of c_v, c_p (p. 105, 6th ed.)
-%     definition of adiabatic exponent/specific heat ratio (p. 105, 6th ed.)
-%     approximating liquid state properties from two-phase tables (p. 106, 6th ed.)
-%     problem 3.10, p. 134 (6th ed.)
+Sign convention for work:
+
+\begin{equation}
+W > 0:\text{work done {\it by} the system}
+\end{equation}
+
+\begin{equation}
+W < 0:\text{work done {\it on} the system}
+\end{equation}
+
+Inexact versus exact differentials: exact differentials do not depend on the process linking two states, inexact differentials do. (Ex: work is inexact and volume is exact.)
+
+Sign convention for heat transfer:
+
+\begin{equation}
+Q > 0:\text{heat transfer {\it to} the system}
+\end{equation}
+
+\begin{equation}
+Q < 0:\text{heat transfer {\it from} the system}
+\end{equation}
+
+First law:
+
+\begin{equation}
+\Delta KE + \Delta PE + \Delta U = Q - W
+\end{equation}
+
+Thermal efficiency for power cycles:
+
+\begin{equation}
+\eta = \frac{W_{cycle}}{Q_{in}} = \frac{Q_{in}-Q_{out}}{Q_{in}}
+\end{equation}
+
+Coefficient of performance for refrigeration and heat pump cycles:
+
+\begin{equation}
+\beta = \frac{Q_{in}}{W_{cycle}} = \frac{Q_{in}}{Q_{out}-Q_{in}}\quad\text{(refrigeration cycle)}
+\end{equation}
+
+\begin{equation}
+\gamma = \frac{Q_{out}}{W_{cycle}} = \frac{Q_{out}}{Q_{out}-Q_{in}}\quad\text{(heat pump cycle)}
+\end{equation}
+
+
+\section{Evaluating Properties}
+
+% phase (p-T) diagram, identify solid, liquid, gas areas and critical and triple points (p. 84, 6th ed.)
+% p-v diagram, be able to draw isotherms with T>T_c, T=T_c, T<T_c, label two-phase region, critical point, triple line (p. 84, 6th ed.)
+% how does water differ from most substances?
+% fluid quality (p. 87, 6th ed.)
+% label vaporization, condensation, melting, sublimation, and freezing on phase diagram (p. 88, 6th ed.)
+% definition (and justification of the use of) enthalpy (p. 95, p. 157, 6th ed.)
+% definition of c_v, c_p (p. 105, 6th ed.)
+% definition of adiabatic exponent/specific heat ratio (p. 105, 6th ed.)
+% approximating liquid state properties from two-phase tables (p. 106, 6th ed.)
+% problem 3.10, p. 134 (6th ed.)
 
 % \section{Control Volume Analysis Using Energy}
 %     energy rate balance (eqn. 4.15, p. 157, 6th ed.)
@@ -120,6 +161,7 @@
 
 % \section{Thermodynamic Relations}
 %     Fundamental Thermodynamic Functions Eq 11.37
+%     Equations of state from AK notes
 
 % \section{Ideal Gas Mixture and Psychrometric Applications}
 
