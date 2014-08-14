@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{ulem}
 \title{\bf{Fluid Mechanics}}
 \author{Nicholas Malaya} \date{}
 
@@ -94,12 +95,32 @@ Flow through a flow meter Eq 3.20
 \newpage
 \section{Fluid Kinematics}
 
-2D streamline Eq 4.1, p. 156
-Material derivative and acceleration Eq 4.5, 4.3
-Convective acceleration p 163
-Reynolds Transport Theorem p 170-177
-
-
+2D streamline 
+\begin{equation}
+    \frac{dy}{dx}=\frac{v}{u}
+\end{equation}
+\newline
+\newline
+Material derivative
+\begin{equation}
+    \frac{D()}{Dt} = \frac{\partial()}{\partial t} + u\frac{\partial()}{\partial x} + v\frac{\partial()}{\partial y} + w\frac{\partial()}{\partial z}
+\end{equation}
+\newline
+\newline
+Acceleration (the portion represented by the spatial derivatives is the convective acceleration)
+\begin{equation}
+    \mathbf{a} = \frac{\partial\mathbf{V}}{\partial t} + u\frac{\partial\mathbf{V}}{\partial x} + v\frac{\partial\mathbf{V}}{\partial y} + w\frac{\partial\mathbf{V}}{\partial z}
+\end{equation}
+\newline
+\newline
+Reynolds Transport Theorem (p 170-177) ($V$ is volume)
+\begin{equation}
+    B=mb
+\end{equation}
+\begin{equation}
+    \frac{dB_{cv}}{dt}=\frac{d}{dt}\left(\int_{cv}\rho b dV\right)
+\end{equation}
+    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -109,14 +130,50 @@ Reynolds Transport Theorem p 170-177
 \newpage
 \section{Finite Control Volume Analysis}
 
-Continuity Integral form Eq 5.5
-Moving CV continuity Eq 5.14, 5.16
-Linear momentum Eq 5.22
-Linear momentum moving cv Eq 5.29
-Momentum of momentum Eq 5.42
-Energy integral form Eq 5.64
+Continuity Integral Form (for a deforming CV the time rate of change term is usually nonzero)
+\begin{equation}
+    \frac{\partial}{\partial t}\int_{cv}\rho d\sout{V} + \int_{cv}\rho \mathbf{V}\cdot \mathbf{\hat{n}} dA = 0
+\end{equation}
+\newline
+\newline
+Moving CV continuity
+\begin{equation}
+    \mathbf{V} = \mathbf{W} + \mathbf{V}_{cv}
+\end{equation}
+\noindent where $W$ is the relative velocity, $V_{cv}$ is the velocity of the control volume, and $V$ is the absolute velocity of the fluid.
+\begin{equation}
+     \frac{\partial}{\partial t}\int_{cv}\rho d\sout{V} + \int_{cv}\rho \mathbf{W}\cdot \mathbf{\hat{n}} dA = 0
+\end{equation}
+\newline
+\newline
+Linear momentum 
+\begin{equation}
+    \frac{\partial}{\partial t}\int_{cv}\mathbf{V}\rho d\sout{V} + \int_{cv}\mathbf{V}\rho \mathbf{V}\cdot \mathbf{\hat{n}} dA = \sum\mathbf{F}
+\end{equation}
+\newline
+\newline
+Linear momentum for a moving CV
+\begin{equation}
+    \int_{cs}\mathbf{W}\rho\mathbf{W}\cdot \mathbf{\hat{n}} dA = \sum\mathbf{F}
+\end{equation}
+\newline
+\newline
+Momentum of momentum 
+\begin{equation}
+    \frac{\partial}{\partial t}\int_{cv}(\mathbf{r}\times\mathbf{V})\rho d\sout{V} + \int_{cv}(\mathbf{r}\times\mathbf{V})\rho \mathbf{V}\cdot \mathbf{\hat{n}} dA = \sum(\mathbf{r}\times\mathbf{F})
+\end{equation}
+\newline
+\newline
+% Energy integral form Eq 5.64
+% \begin{equation}
+    
+% \end{equation}
+% \newline
+% \newline
 Energy w/ head loss Eq 5.89
-
+\begin{equation}
+    \frac{p_o}{\gamma} + \frac{\alpha_o\bar{V}^2_o}{2g}+z_o = \frac{p_i}{\gamma} + \frac{\alpha_i\bar{V}^2_i}{2g}+z_i + \frac{W_{shaft,in}}{g} - h_L
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
