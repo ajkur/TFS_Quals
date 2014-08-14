@@ -5,52 +5,195 @@
 \begin{document}
 \maketitle
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%        Fluid Dynamics
+%        Introduction
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Fluid Dynamics}
-%\begin{equation}
-%  \frac{d}{dt}\int_{\Omega(t)} T(x,t) dV = \int_{\Omega} \frac{\partial}{\partial t} T dV + \int_{\partial \Omega} \hat n \cdot w T dA = \int_{\Omega}\frac%{\partial}{\partial t} T + \nabla \cdot w T dV
-%\end{equation}
-%\newline
-%\newline
-Friction Velocity
+\section{Introduction}
+
+Shear stress
+\begin{equation}
+    \tau = \mu\frac{du}{dy}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Fluid Statics
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fluid Statics}
+
+Incompressible fluid at rest
+\begin{equation}
+    p_1-p_2 = \gamma (z_2-z_1)
+\end{equation}
+\newline
+\newline
+Pressure head
+\begin{equation}
+    h = \frac{p_1-p_2}{\gamma}
+\end{equation}
+\newline
+\newline
+Buoyant force ($V$ is volume)
+\begin{equation}
+    F_B = \gamma V
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Elementary Fluid Dynamics
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Elementary Fluid Dynamics}
+
+Streamlines - lines that are tangent to the velocity vectors throughout the flow field
+\newline
+\newline
+Bernoulli (for assumptions remember ISIS: inviscid, steady, incompressible, on a streamline)
+\begin{equation}
+  \frac{v^2}{2}+gz+\frac{p}{\rho}=constant
+\end{equation}
+We advance the non-linear terms explicitly. The linear terms
+implicitly. The linear terms are the viscous operator. 
+\newline
+\newline
+Across the streamline
+\begin{equation}
+    p + \rho\int\frac{V^2}{R}dn + \gamma z = constant
+\end{equation}
+\newline
+\newline
+Static pressure - actual thermodynamic pressure of the fluid as it flows, measured by pressure tap on a flat surface
+\newline
+\newline
+Dynamic pressure - $\rho V^2/2$, measured by inserting a tap pointing upstream
+\newline
+\newline
+Stagnation pressure - static pressure plus dynamic pressure
+\newline
+\newline
+Total pressure - Bernoulli equation, static plus dynamic plus hydrostatic.
+\newline
+\newline
+Flow through a flow meter Eq 3.20
+\begin{equation}
+    Q = A_2\sqrt\frac{2(p_1-p_2)}{\rho[1-(A_2/A_1)^2]}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Fluid Kinematics
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Fluid Kinematics}
+
+2D streamline Eq 4.1, p. 156
+Material derivative and acceleration Eq 4.5, 4.3
+Convective acceleration p 163
+Reynolds Transport Theorem p 170-177
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Finite Control Volume Analysis
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Finite Control Volume Analysis}
+
+Continuity Integral form Eq 5.5
+Moving CV continuity Eq 5.14, 5.16
+Linear momentum Eq 5.22
+Linear momentum moving cv Eq 5.29
+Momentum of momentum Eq 5.42
+Energy integral form Eq 5.64
+Energy w/ head loss Eq 5.89
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Differential Analysis of Fluid Flow
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Differential Analysis of Fluid Flow}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Similitude, Dimensional Analysis, and Modeling
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Similitude, Dimensional Analysis, and Modeling}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Viscous Flow in Pipes
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Viscous Flow in Pipes}
+
+Friction Velocity (ch. 8 p 425)
 \begin{equation}
   u_\tau = \sqrt{\frac{\tau_w}{\rho}}
 \end{equation}
 \newline
 \newline
-The momentum thickness is transverse distance by which the boundary should be displaced to compensate for the reduction in momentum of the flowing fluid on account of boundary layer formation. 
-\begin{equation}
-  \theta = \int^\infty_0 \frac{u(y)}{u_0}(1-\frac{u(y)}{u_0})dy
-\end{equation}
-\newline
-\newline
-The reynolds stress tensor is the stress in a fluid due to the random turbulent fluctuations in the fluid momentum:
+The reynolds stress tensor is the stress in a fluid due to the random turbulent fluctuations in the fluid momentum (ch. 8):
 \begin{equation}
   \rho \overline{u'_i u'_j}
 \end{equation}
-\newline
-\newline
-Drag equation: 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Flow Over Immersed Bodies
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Flow Over Immersed Bodies}
+
+Drag equation (ch 9): 
 \begin{equation}
   F_D = \frac{1}{2}\rho v^2 C_D A
 \end{equation}
 \newline
 \newline
-Bernoulli 
+The momentum thickness is transverse distance by which the boundary should be displaced to compensate for the reduction in momentum of the flowing fluid on account of boundary layer formation. (ch. 9)
 \begin{equation}
-  \frac{v^2}{2}+gz+\frac{p}{\rho}=constant
+  \theta = \int^\infty_0 \frac{u(y)}{u_0}(1-\frac{u(y)}{u_0})dy
 \end{equation}
 \newline
-Assume: steady state, no friction, constant density, points are on streamlines
 \newline
-\newline
-We advance the non-linear terms explicitly. The linear terms
-implicitly. The linear terms are the viscous operator. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%        Compressible Flow
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Compressible Flow}
+
+
+%\begin{equation}
+%  \frac{d}{dt}\int_{\Omega(t)} T(x,t) dV = \int_{\Omega} \frac{\partial}{\partial t} T dV + \int_{\partial \Omega} \hat n \cdot w T dA = \int_{\Omega}\frac%{\partial}{\partial t} T + \nabla \cdot w T dV
+%\end{equation}
+%\newline
+%\newline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
