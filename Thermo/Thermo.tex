@@ -113,34 +113,171 @@ Coefficient of performance for refrigeration and heat pump cycles:
 
 \section{Evaluating Properties}
 
-% phase (p-T) diagram, identify solid, liquid, gas areas and critical and triple points (p. 84, 6th ed.)
-% p-v diagram, be able to draw isotherms with T>T_c, T=T_c, T<T_c, label two-phase region, critical point, triple line (p. 84, 6th ed.)
-% how does water differ from most substances?
-% fluid quality (p. 87, 6th ed.)
-% label vaporization, condensation, melting, sublimation, and freezing on phase diagram (p. 88, 6th ed.)
-% definition (and justification of the use of) enthalpy (p. 95, p. 157, 6th ed.)
-% definition of c_v, c_p (p. 105, 6th ed.)
-% definition of adiabatic exponent/specific heat ratio (p. 105, 6th ed.)
-% approximating liquid state properties from two-phase tables (p. 106, 6th ed.)
-% problem 3.10, p. 134 (6th ed.)
+Phase (p-T) diagram, identify solid, liquid, gas areas and critical and triple points (p. 84, 6th ed.)
 
-% \section{Control Volume Analysis Using Energy}
-%     energy rate balance (eqn. 4.15, p. 157, 6th ed.)
+p-v diagram, be able to draw isotherms with $T>T_c$, $T=T_c$, $T<T_c$, label two-phase region, critical point, triple line (p. 84, 6th ed.)
 
-% \section{The Second Law of Thermodynamics}
-%     definition of irreversible/reversible processes (p. 219, 6th ed.)
-%     Carnot cycle (p. 239, p. 266, 6th ed.)
+How does water differ from most substances? Expands on solidification
 
-% \section{Using Entropy}
-%     d S = \left(\frac{\delta Q}{T}\right)_\text{int rev} (eqn. 6.2b, p. 256, 6th ed.)
-%     T dS = dU + p dV (eqn. 6.8, p. 261, 6th ed.)
-%     T dS = dH - V dp (eqn. 6.9, p. 261, 6th ed.)
-%     entropy change equations
-%     entropy rate balance (eqn. 6.36, p. 283, 6th ed.)
-%     isentropic pressure and specific volume ratio (needed to use ideal gas table) (pp. 292-293, 6th ed.)
-%     differential form of the entropy balance for a closed system (eqn. 6.25, p. 269, 6th ed.)
-%     allowed signs for the entropy production term (p. 271, 6th ed.)
-%     isentropic efficiencies (pp. 297-303, 6th ed.)
+Fluid quality 
+\begin{equation}
+    x = \frac{m_{vap}}{m_{liq}+m_{vap}}
+\end{equation}
+
+Label vaporization, condensation, melting, sublimation, and freezing on phase diagram (p. 88, 6th ed.)
+
+Definition (and justification of the use of) enthalpy: it is convenient for control volume analysis
+
+\begin{equation}
+    H=U+pV
+\end{equation}
+
+Definition of $c_v$ and $c_p$ 
+\begin{equation}
+    c_v = \left(\frac{\partial u}{\partial T}\right)_v
+\end{equation}
+\begin{equation}
+    c_p = \left(\frac{\partial h}{\partial T}\right)_p
+\end{equation}
+\begin{equation}
+    k = \frac{c_p}{c_v}
+\end{equation}
+
+Approximating liquid state properties from two-phase tables
+\begin{equation}
+    v(T,p)\approx v_f(T)
+\end{equation}
+\begin{equation}
+    u(T,p)\approx u_f(T)
+\end{equation}
+\begin{equation}
+    h(T,p)\approx h_f(T) + v_f(T)[p-p_{sat}(T)]
+\end{equation}
+
+Ideal Gas
+\begin{equation}
+    c_p(T) = c_v(T)+R
+\end{equation}
+
+Problem 3.10, p. 134 (6th ed.)
+
+\section{Control Volume Analysis Using Energy}
+
+Energy rate balance
+\begin{equation}
+    \frac{dE_{cv}}{dt} = \dot Q_{cv} -  \dot W_{cv} + \sum_i \dot m_i \left(h_i + \frac{V_i^2}{2} + gz_i \right) - \sum_e \dot m_e \left(h_e + \frac{V_e^2}{2} + gz_e \right) 
+\end{equation}
+
+\section{The Second Law of Thermodynamics}
+
+Irreversible process: system and all parts of its surroundings cannot be exactly restored to their respective initial states.
+
+Reversible process: system and surrounding scan be returned to their initial states.
+\newline
+\newline
+Some irreversibilities:
+
+1. Heat transfer through a finite temperature differance
+
+2. Unrestrained expansion of a gas or liquid to a lower pressure
+
+3. Spontaneous chemical reaction
+
+4. Spontaneous mixing of matter at different compositions or states
+
+5. Friction
+
+6. Electric current flow through resistance
+
+7. Magnetization or polarization with hysteresis
+
+8. Inelastic deformation
+\newline
+\newline
+Carnot cycle:
+
+Process 1-2: Adiabatic compression
+
+Process 2-3: Isothermal expansion due to heat transfer from reservoir at $T_H$
+
+Process 3-4: Adiabatic expansion
+
+Process 4-1: Isothermal compression due to heat transfer to reservoir at $T_C$
+
+Carnot efficiency
+
+\begin{equation}
+    \eta = 1 - \frac{T_C}{T_H}
+\end{equation}
+
+\section{Using Entropy}
+
+Entropy change
+\begin{equation}
+    d S = \left(\frac{\delta Q}{T}\right)_\text{int rev}
+\end{equation}
+
+$TdS$ Equations
+\begin{equation}
+    T dS = dU + p dV
+\end{equation}
+\begin{equation}
+    T dS = dH - V dp
+\end{equation}
+
+Entropy change equations
+
+\begin{equation}
+    s_2-s_1 = c \text{ln}\frac{T_2}{T_1}\quad\text{incompressible}
+\end{equation}
+
+\begin{equation}
+    s(T_2,v_2)-s(T_1,v_1) = \int_{T_1}^{T_2}c_v(T)\frac{dT}{T} + R \text{ln}\frac{v_2}{v_1}  \quad\text{ideal gas}
+\end{equation}
+
+\begin{equation}
+    s(T_2,p_2)-s(T_1,p_1) = \int_{T_1}^{T_2}c_p(T)\frac{dT}{T} - R \text{ln}\frac{p_2}{p_1}  \quad\text{ideal gas}
+\end{equation}
+
+Closed system
+
+\begin{equation}
+    S_2-S_1 = \frac{Q}{T_b}+\sigma
+\end{equation}
+
+Rate balance
+
+\begin{equation}
+    \frac{dS}{dt} = \sum_j \frac{\dot Q_j}{T_j} + \sum_i \dot m_i s_i - \sum_e \dot m_e s_e +\dot\sigma_{cv}
+\end{equation}
+
+Isentropic pressure and specific volume ratio (needed to use ideal gas table)
+
+\begin{equation}
+    \frac{p_2}{p_1}=\frac{p_{r2}}{p_{r1}}
+\end{equation}
+\begin{equation}
+    \frac{v_2}{v_1}=\frac{v_{r2}}{v_{r1}}
+\end{equation}
+\begin{equation}
+    \frac{T_2}{T_1} = \left(\frac{p_2}{p_1}\right)^{(k-1)/k}
+\end{equation}
+
+Allowed signs for the entropy production term (p. 271, 6th ed.): 0 for no irreverisbilities and greater than 0 for if irreversibilities are present
+
+Isentropic efficiencies:
+
+\begin{equation}
+    \eta_t = \frac{h_1 - h_2}{h_1 - h_{2s}}\quad\text{Turbine}
+\end{equation}
+
+\begin{equation}
+    \eta_{nozzle} = \frac{V_2^2}{V_{2s}^2}\quad\text{Nozzle}
+\end{equation}
+
+\begin{equation}
+    \eta_c = \frac{h_{2s} - h_1}{h_2 - h_1}\quad\text{Compressor/Pump}
+\end{equation}
 
 % \section{Exergy Analysis}
 
