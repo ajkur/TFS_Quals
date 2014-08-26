@@ -20,6 +20,18 @@ Shear stress
 \begin{equation}
     \tau = \mu\frac{du}{dy}
 \end{equation}
+\newline
+\newline
+Dynamic ($\mu$) and Kinematic ($\nu$) viscosity
+\begin{equation}
+  \nu \equiv \frac{\mu}{\rho}
+\end{equation}
+\newline
+\newline
+Specific Gravity
+\begin{equation}
+  SG \equiv \frac{\rho}{\rho_\text{water at 4$^\circ$C}}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -165,16 +177,22 @@ Momentum of momentum
 \end{equation}
 \newline
 \newline
-% Energy integral form Eq 5.64
-% \begin{equation}
-    
-% \end{equation}
+Energy integral from Eq 5.64
+\begin{equation}
+  \frac{\partial}{\partial t} \int_\text{cv} e \rho d V + \int_\text{cs} \left(\hat{h} + \frac{V^2}{2} + g z\right) \rho \mathbf{V} \mathbf{\cdot} \mathbf{\hat{n}} d A = \dot{Q}_\text{net,in} - \dot{W}_\text{shaft,net out}
+\end{equation}
 % \begin{equation}
 %  \frac{d}{dt}\int_{\Omega(t)} T(x,t) dV = \int_{\Omega} \frac{\partial}{\partial t} T dV + \int_{\partial \Omega} \hat n \cdot w T dA = \int_{\Omega}\frac{\partial}{\partial t} T + \nabla \cdot w T dV
 % \end{equation}
-% \newline
-% \newline
-Energy w/ head loss Eq 5.89
+\newline
+\newline
+Kinetic energy coefficient
+\begin{equation}
+  \alpha = \frac{\int_A (V^2/2) \rho \mathbf{V}dA \cdot \mathbf{\hat{n}}}{\dot{m} \overline{V}^2/2}
+\end{equation}
+\newline
+\newline
+Energy w/ head loss and kinetic energy coefficients Eq 5.89
 \begin{equation}
     \frac{p_o}{\gamma} + \frac{\alpha_o\bar{V}^2_o}{2g}+z_o = \frac{p_i}{\gamma} + \frac{\alpha_i\bar{V}^2_i}{2g}+z_i + \frac{W_{shaft,in}}{g} - h_L
 \end{equation}
@@ -191,17 +209,37 @@ Hydraulic diameter
 \begin{equation}
   D_h = \frac{4A_c}{P}
 \end{equation}
-
+\newline
+\newline
 Conservation of Mass
 \begin{equation}
   \frac{\partial\rho}{\partial t} + \frac{\partial\rho u}{\partial x} +\frac{\partial\rho v}{\partial y} +\frac{\partial\rho w}{\partial z} = 0
 \end{equation}
-
+\newline
+\newline
 Streamfunction
 \begin{equation}
   u=\frac{\partial\psi}{\partial y}\quad v=-\frac{\partial\psi}{\partial x}
 \end{equation}
+\newline
+\newline
+Relation between complete and viscous stress tensor for Newtonian fluids
+\begin{equation}
+  \sigma_{ij} = \tau_{ij} - p \delta_{ij}
+\end{equation}
+\newline
+\newline
+N-S equation
 
+Vector
+\begin{equation}
+  \rho\frac{D\mathbf{V}}{Dt} = -\nabla p + \rho\mathbf{g} + \mu \nabla^2\mathbf{V}
+\end{equation}
+
+Cartesian x
+\begin{equation}
+  \rho\left( \frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z}\right) = -\frac{\partial p}{\partial x} + \rho g_x + \mu\left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right)
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %        Similitude, Dimensional Analysis, and Modeling
@@ -261,6 +299,17 @@ The reynolds stress tensor is the stress in a fluid due to the random turbulent 
 \end{equation}
 \newline
 \newline
+Losses in pipes:
+
+Major losses
+\begin{equation}
+  h_{L,major} = f\frac{l}{D}\frac{V^2}{2g}
+\end{equation}
+
+Minor losses
+\begin{equation}
+  h_{L,minor} = K_L\frac{V^2}{2g}\quad \Delta p = K_L 0.5\rho V^2
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -297,12 +346,22 @@ Derive Boundary Layer Equations from N-S with the assumptions:
 Laminar boundary layer equations: get these from White
 \newline
 \newline
+Laminar BL thickness proportionality. (constant is 5 for Blausius solution)
+\begin{equation}
+  \delta \sim C\left(\frac{\nu x}{U}\right)^{1/2}
+\end{equation}
+\newline
+\newline
 Blausius Solution:
 \begin{equation}
   \eta=\frac{y}{\delta}=y(U/\nu x)^{1/2}\quad\frac{u}{U}=f'(\eta)
 \end{equation}
 \begin{equation}
   2 \frac{\text{d}^3 f}{\text{d} \eta^3} + f \frac{\text{d}^2 f}{\text{d} \eta^2} = 0
+\end{equation}
+Local friction coefficient for Blausius solution
+\begin{equation}
+  c_\text{f,x} = 0.664 Re_x^{-1/2}
 \end{equation}
 \newline
 \newline
@@ -328,8 +387,7 @@ Local friction coefficient
 \newline
 \newline
 Approximate transitional value of $Re_x$ for flow over a flat plate is $\approx 5 \cdot 10^5$
-% Why does boundary layer separation occur on a cylinder? (pp. 514-515, 5th ed., also see Incropera p. 423-424)
-% value of \delta_\text{m} when u / u_{\infty} = 0.99 for the Blasius solution (p. 500, 5th ed.)
+Boundary layer separation occurs when the fluid at the surface lacks the momentum to overcome the adverse ($dp/dx > 0$) pressure gradient. The turbulent boundary layer has more momentum than the laminar boundary layer and thus delays separation.
 \newline
 \newline
 Drag. Friction Drag from shear and Form Drag from pressure. 
@@ -344,7 +402,7 @@ Lift
 \end{equation}
 \newline
 \newline
-Lift and drag curves for spheres/cylinders and airfoils
+Sketch lift and drag curves for spheres/cylinders and airfoils
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -374,6 +432,15 @@ Single-phase continuity
 \begin{equation}
   \frac{\partial \rho}{\partial t} + \frac{\partial \rho u_i}{\partial x_i} = 0
 \end{equation}
+\newline
+\newline
+Mach Number
+\begin{equation}
+  Ma \equiv \frac{u}{c}
+\end{equation}
+\newline
+\newline
+A perfect gas may not be considered incompressible for $Ma > 0.3$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
