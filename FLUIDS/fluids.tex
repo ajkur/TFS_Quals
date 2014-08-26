@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{ulem}
+\usepackage{amsmath}
 \title{\bf{Fluid Mechanics}}
 \author{Nicholas Malaya} \date{}
 
@@ -55,12 +56,11 @@ Buoyant force ($V$ is volume)
 Streamlines - lines that are tangent to the velocity vectors throughout the flow field
 \newline
 \newline
-Bernoulli (for assumptions remember ISIS: inviscid, steady, incompressible, on a streamline)
+Bernoulli (for assumptions remember ISIS: inviscid, steady, incompressible, on a streamline). Bernoulli can only be used across streamlines if the flow is irrotational.
 \begin{equation}
   \frac{v^2}{2}+gz+\frac{p}{\rho}=constant
 \end{equation}
-We advance the non-linear terms explicitly. The linear terms
-implicitly. The linear terms are the viscous operator. 
+We advance the non-linear terms explicitly. The linear terms implicitly. The linear terms are the viscous operator. 
 \newline
 \newline
 Across the streamline
@@ -120,6 +120,7 @@ Reynolds Transport Theorem (p 170-177) ($V$ is volume)
 \begin{equation}
     \frac{dB_{cv}}{dt}=\frac{d}{dt}\left(\int_{cv}\rho b dV\right)
 \end{equation}
+
     
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,6 +169,9 @@ Momentum of momentum
 % \begin{equation}
     
 % \end{equation}
+% \begin{equation}
+%  \frac{d}{dt}\int_{\Omega(t)} T(x,t) dV = \int_{\Omega} \frac{\partial}{\partial t} T dV + \int_{\partial \Omega} \hat n \cdot w T dA = \int_{\Omega}\frac{\partial}{\partial t} T + \nabla \cdot w T dV
+% \end{equation}
 % \newline
 % \newline
 Energy w/ head loss Eq 5.89
@@ -206,7 +210,7 @@ Streamfunction
 \newpage
 \section{Similitude, Dimensional Analysis, and Modeling}
 
-% Buckingham Pi Theorem (p. 349, 5th ed)
+Buckingham Pi Theorem: If an equation involving $k$ variables is dimensionally homogeneous, it can be reduced to a relationship amount $k - r$ independent dimensionless products, where $r$ is the rank of the dimensional matrix (the minimum number of reference dimensions required to describe the variables).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,11 +221,34 @@ Streamfunction
 \newpage
 \section{Viscous Flow in Pipes}
 
+Pipe flow in a round pipe is laminar for around $Re_D < 2100$. The flow is turbulent for approximately $Re_D > 4000$.
+\newline
+\newline
+Turbulent entry length for $10^4 < Re_D < 10^5$: $20 < l_e / D < 30$
+\newline
+\newline
 Derive viscous stress as a function of pressure gradient from N-S equations
 critical tube $Re_D$ (p. 404, 5th ed.)
+\newline
+\newline
 Darcy friction factor (in terms of pressure drop and shear stress) (p. 415, 5th ed)
+\begin{equation}
+  f = \frac{\Delta p D \rho V^2}{2l}
+\end{equation}
+\begin{equation}
+  f = \frac{64}{Re}\quad\text{laminar}
+\end{equation}
+\newline
+\newline
+Laminar velocity profile in a tube
+\begin{equation}
+  u = \frac{r_0^2}{4 \mu} \left(- \frac{d p}{d x}\right) \left(1 - \frac{r^2}{r_0^2}\right)
+\end{equation}
+\newline
+\newline
 Reynolds stress (p. 423, 5th ed.)
-
+\newline
+\newline
 Friction Velocity (ch. 8 p 425)
 \begin{equation}
   u_\tau = \sqrt{\frac{\tau_w}{\rho}}
@@ -232,7 +259,8 @@ The reynolds stress tensor is the stress in a fluid due to the random turbulent 
 \begin{equation}
   \rho \overline{u'_i u'_j}
 \end{equation}
-
+\newline
+\newline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -242,29 +270,81 @@ The reynolds stress tensor is the stress in a fluid due to the random turbulent 
 \newpage
 \section{Flow Over Immersed Bodies}
 
-% Derive Boundary Layer Equations
-% Derive Displacement Thickness
-% Derive Momentum Thickness
-% boundary layer assumptions (p. 498, 5th ed.)
-% laminar boundary layer equations (p. 498, 5th ed.)
-% local friction coefficient (eqn 9.31, p. 506, 5th ed.)
-% approximate transitional value of Re_x for flow over a flat plate (p. 507, 5th ed.)
+Derive Displacement Thickness
+\begin{equation}
+  \delta^* = \int_0^\delta (1-\frac{u}{U})dy
+\end{equation}
+\newline
+\newline
+Derive Momentum Thickness. The momentum thickness is transverse distance by which the boundary should be displaced to compensate for the reduction in momentum of the flowing fluid on account of boundary layer formation. (ch. 9)
+\begin{equation}
+  \Theta = \int_0^\delta \frac{u}{U}(1-\frac{u}{U})dy
+\end{equation}
+\newline
+\newline
+Derive Boundary Layer Equations from N-S with the assumptions:
+\begin{equation}
+  \frac{\partial^2 u}{\partial x^2} \ll \frac{\partial^2 u}{\partial y^2}
+\end{equation}
+\begin{equation}
+  v \ll u\quad\text{and}\quad\frac{\partial}{\partial x} \ll \frac{\partial}{\partial y}
+\end{equation}
+\begin{equation}
+  \frac{\partial p}{\partial x} \approx \frac{\partial p_\infty}{\partial x}
+\end{equation}
+\newline
+\newline
+Laminar boundary layer equations: get these from White
+\newline
+\newline
+Blausius Solution:
+\begin{equation}
+  \eta=\frac{y}{\delta}=y(U/\nu x)^{1/2}\quad\frac{u}{U}=f'(\eta)
+\end{equation}
+\begin{equation}
+  2 \frac{\text{d}^3 f}{\text{d} \eta^3} + f \frac{\text{d}^2 f}{\text{d} \eta^2} = 0
+\end{equation}
+\newline
+\newline
+Momentum thickness and drag force relations
+\begin{equation}
+  \frac{dD}{dx} = b \tau_w
+\end{equation}
+\begin{equation}
+  D = \rho b U^2 \Theta
+\end{equation}
+\begin{equation}
+  \tau_\text{w} = \rho U^2 \frac{d \Theta}{d x}
+\end{equation}
+\newline
+\newline
+Local friction coefficient
+\begin{equation}
+  c_f = \frac{2\tau_w}{\rho U^2}
+\end{equation}
+\begin{equation}
+  C_{Df} = \frac{1}{l}\int_0^l c_f dx
+\end{equation}
+\newline
+\newline
+Approximate transitional value of $Re_x$ for flow over a flat plate is $\approx 5 \cdot 10^5$
 % Why does boundary layer separation occur on a cylinder? (pp. 514-515, 5th ed., also see Incropera p. 423-424)
 % value of \delta_\text{m} when u / u_{\infty} = 0.99 for the Blasius solution (p. 500, 5th ed.)
-
-
-Drag equation (ch 9): 
+\newline
+\newline
+Drag. Friction Drag from shear and Form Drag from pressure. 
 \begin{equation}
   F_D = \frac{1}{2}\rho v^2 C_D A
 \end{equation}
 \newline
 \newline
-The momentum thickness is transverse distance by which the boundary should be displaced to compensate for the reduction in momentum of the flowing fluid on account of boundary layer formation. (ch. 9)
+Lift
 \begin{equation}
-  \theta = \int^\infty_0 \frac{u(y)}{u_0}(1-\frac{u(y)}{u_0})dy
+  F_L = \frac{1}{2}\rho v^2 C_L A
 \end{equation}
 \newline
 \newline
+Lift and drag curves for spheres/cylinders and airfoils
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -276,12 +356,24 @@ The momentum thickness is transverse distance by which the boundary should be di
 \section{Compressible Flow}
 
 Isentropic Relations
-
-%\begin{equation}
-%  \frac{d}{dt}\int_{\Omega(t)} T(x,t) dV = \int_{\Omega} \frac{\partial}{\partial t} T dV + \int_{\partial \Omega} \hat n \cdot w T dA = \int_{\Omega}\frac%{\partial}{\partial t} T + \nabla \cdot w T dV
-%\end{equation}
-%\newline
-%\newline
+\newline
+\newline
+Speed of sound for an isotropic perfect gas
+\begin{equation}
+  c^2 = \left(\frac{\partial p}{\partial \rho}\right)_s
+\end{equation}
+\begin{equation}
+  p = \text{const.} \rho^\gamma
+\end{equation}
+\begin{equation}
+  c^2 = \frac{\gamma p}{\rho} = \gamma R T
+\end{equation}
+\newline
+\newline
+Single-phase continuity
+\begin{equation}
+  \frac{\partial \rho}{\partial t} + \frac{\partial \rho u_i}{\partial x_i} = 0
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
