@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{ulem}
 \usepackage{amsmath}
+\usepackage[pdftex]{graphicx}   
 \title{\bf{Fluid Mechanics}}
 \author{Nicholas Malaya} \date{}
 
@@ -54,8 +55,21 @@ Pressure head
 \newline
 Buoyant force ($V$ is volume)
 \begin{equation}
-    F_B = \gamma V
+    F_B = \gamma_{fluid} V
 \end{equation}
+\newline
+\newline
+Circulation: denotes the net algebraic strength of all the vortex filaments contained within the closed curve
+\begin{equation}
+  \Gamma = \oint_{C} Vcos\alpha ds
+\end{equation}
+\newline
+\newline
+Vorticity: 2 times the angular velocity. Equal to zero for irrotational flows.
+\begin{equation}
+  \mathbf{\zeta} = 2\mathbf{\omega} = curl\mathbf{V}
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -354,7 +368,7 @@ Laminar BL thickness proportionality. (constant is 5 for Blausius solution)
 \newline
 Blausius Solution:
 \begin{equation}
-  \eta=\frac{y}{\delta}=y(U/\nu x)^{1/2}\quad\frac{u}{U}=f'(\eta)
+  \eta=\frac{y}{\delta}=y(U/\nu x)^{1/2}\quad\frac{u}{U}=f'(\eta)\quad\psi = \sqrt{U\nu x}f(\eta)
 \end{equation}
 \begin{equation}
   2 \frac{\text{d}^3 f}{\text{d} \eta^3} + f \frac{\text{d}^2 f}{\text{d} \eta^2} = 0
@@ -390,6 +404,10 @@ Approximate transitional value of $Re_x$ for flow over a flat plate is $\approx 
 Boundary layer separation occurs when the fluid at the surface lacks the momentum to overcome the adverse ($dp/dx > 0$) pressure gradient. The turbulent boundary layer has more momentum than the laminar boundary layer and thus delays separation.
 \newline
 \newline
+Von Karman momentum integral
+\begin{equation}
+  \frac{\tau_w}{\rho} =  \frac{d}{dx}(U^2\Theta) + \delta^* U\frac{dU}{dx}
+\end{equation}
 Drag. Friction Drag from shear and Form Drag from pressure. 
 \begin{equation}
   F_D = \frac{1}{2}\rho v^2 C_D A
@@ -402,8 +420,34 @@ Lift
 \end{equation}
 \newline
 \newline
+Pressure coefficient
+\begin{equation}
+  C_p = \frac{p-p_\infty}{\frac{1}{2}\rho_\infty U^2_\infty}
+\end{equation}
+\newline
+\newline
 Sketch lift and drag curves for spheres/cylinders and airfoils
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.6\textwidth]{./Figures/cpdist}
+\caption{Pressure coefficient $C_p$ for a cylinder in cross-flow.}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.75\textwidth]{./Figures/AirfoilCp}
+\caption{Pressure coefficient $C_p$ for an airfoil.}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.6\textwidth]{./Figures/Lift_drag_graph}
+\caption{Lift and drag coefficients for an airfoil.}
+\end{figure}
+\newline
+\newline
+Purpose of flaps on an airplane:
 
+Deployed flaps increase $C_\text{L}$ but at the expense of also increasing $C_\text{D}$. This is actually a good condition during landing. A decrease in speed requires larger lift to sustain flight and the increase in drag helps to further slow down the plane.
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
