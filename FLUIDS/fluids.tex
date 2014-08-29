@@ -357,7 +357,17 @@ Derive Boundary Layer Equations from N-S with the assumptions:
 \end{equation}
 \newline
 \newline
-Laminar boundary layer equations: get these from White
+Laminar boundary layer equations: 
+\begin{equation}
+  \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0
+\end{equation}
+\begin{equation}
+  u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} = -\frac{\partial p}{\partial x} + \mu\frac{\partial^2 u}{\partial y^2}
+\end{equation}
+where
+\begin{equation}
+  -\frac{d p}{d x} = U \frac{d U}{d x}
+\end{equation}
 \newline
 \newline
 Laminar BL thickness proportionality. (constant is 5 for Blausius solution)
