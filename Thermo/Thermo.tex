@@ -55,6 +55,7 @@
 \begin{document}
 \maketitle
 
+
 \section{Introductory Concepts and Definitions}
     
 Extensive property - a property who's value for an overall system is the sum of its values for the parts into which the system is divided.
@@ -64,6 +65,7 @@ Intensive property - a property who's value is independent of the size or extent
 Property - a quantity is a property if and only if its change in value between two states is independent of the process.
 
 
+\newpage
 \section{Energy and the First Law of Thermodynamics}
 
 Sign convention for work:
@@ -111,6 +113,7 @@ Coefficient of performance for refrigeration and heat pump cycles:
 \end{equation}
 
 
+\newpage
 \section{Evaluating Properties}
 
 Phase (p-T) diagram, identify solid, liquid, gas areas and critical and triple points (p. 84, 6th ed.)
@@ -154,22 +157,59 @@ Approximating liquid state properties from two-phase tables
     h(T,p)\approx h_f(T) + v_f(T)[p-p_{sat}(T)]
 \end{equation}
 
+Incompressible substance: $c_p=c_v$
+
+Monatomic substance: $c_p=\frac{5}{2}R$
+
+Compressibility Factor
+\begin{equation}
+    Z = \frac{pv}{RT}
+\end{equation}
+
+Reduced Temperature and Pressure:
+\begin{equation}
+    T_R = T/T_c,\quad p_R = p/p_c
+\end{equation}
+where $Z=f(T_R,p_R)$
+
 Ideal Gas
 \begin{equation}
     c_p(T) = c_v(T)+R
 \end{equation}
+\begin{equation}
+    k = \frac{c_p(T)}{c_v(T)}
+\end{equation}
 
-Perfect gas is usually interchangeable with ideal gas but can also be considered to have $c_p$ and $c_v$ not functions of temperature.
+Perfect gas is usually interchangeable with ideal gas but can also be considered such that $c_p$ and $c_v$ are not functions of temperature.
+
+Polytropic process: $pV^n=constant$
 
 Problem 3.10, p. 134 (6th ed.)
 
+
+\newpage
 \section{Control Volume Analysis Using Energy}
+
+Mass rate balance
+\begin{equation}
+    \frac{dm_{cv}}{dt} = \sum_i \dot m_i - \sum_e \dot m_e
+\end{equation}
 
 Energy rate balance
 \begin{equation}
     \frac{dE_{cv}}{dt} = \dot Q_{cv} -  \dot W_{cv} + \sum_i \dot m_i \left(h_i + \frac{V_i^2}{2} + gz_i \right) - \sum_e \dot m_e \left(h_e + \frac{V_e^2}{2} + gz_e \right) 
 \end{equation}
 
+Nozzels and Diffusers (plus throttling devices):
+\begin{equation}
+    0 = h_1 - h_2 + \frac{V_1^2 - V_2^2}{2}\quad\text{(adiabatic)}
+\end{equation}
+\begin{equation}
+    h_1 = h_2\quad\text{neglecting kinetic energy (throttling devices)}
+\end{equation}
+
+
+\newpage
 \section{The Second Law of Thermodynamics}
 
 Irreversible process: system and all parts of its surroundings cannot be exactly restored to their respective initial states.
