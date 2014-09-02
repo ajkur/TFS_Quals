@@ -63,6 +63,11 @@ Intensive property - a property who's value is independent of the size or extent
 
 Property - a quantity is a property if and only if its change in value between two states is independent of the process.
 
+Molar and Mass basis
+\begin{equation}
+    R = \frac{\bar R}{M}
+\end{equation}
+
 
 \section{Energy and the First Law of Thermodynamics}
 
@@ -91,7 +96,13 @@ Q < 0:\text{heat transfer {\it from} the system}
 First law:
 
 \begin{equation}
-\Delta KE + \Delta PE + \Delta U = Q - W
+    \Delta \text{KE} + \Delta \text{PE} + \Delta U = Q - W
+\end{equation}
+
+Time rate first law:
+
+\begin{equation}
+    \frac{d\text{KE}}{dt} + \frac{d\text{PE}}{dt} + \frac{dU}{dt} = \dot Q - \dot W
 \end{equation}
 
 Thermal efficiency for power cycles:
@@ -110,7 +121,13 @@ Coefficient of performance for refrigeration and heat pump cycles:
 \gamma = \frac{Q_{out}}{W_{cycle}} = \frac{Q_{out}}{Q_{out}-Q_{in}}\quad\text{(heat pump cycle)}
 \end{equation}
 
+Power:
+\begin{equation}
+    \dot W = \mathbf{F}\cdot\mathbf{V},\quad\dot W = \mathbf{T}\omega
+\end{equation}
 
+
+\newpage
 \section{Evaluating Properties}
 
 Phase (p-T) diagram, identify solid, liquid, gas areas and critical and triple points (p. 84, 6th ed.)
@@ -163,6 +180,7 @@ Perfect gas is usually interchangeable with ideal gas but can also be considered
 
 Problem 3.10, p. 134 (6th ed.)
 
+\newpage
 \section{Control Volume Analysis Using Energy}
 
 Energy rate balance
@@ -170,6 +188,7 @@ Energy rate balance
     \frac{dE_{cv}}{dt} = \dot Q_{cv} -  \dot W_{cv} + \sum_i \dot m_i \left(h_i + \frac{V_i^2}{2} + gz_i \right) - \sum_e \dot m_e \left(h_e + \frac{V_e^2}{2} + gz_e \right) 
 \end{equation}
 
+\newpage
 \section{The Second Law of Thermodynamics}
 
 Irreversible process: system and all parts of its surroundings cannot be exactly restored to their respective initial states.
@@ -212,6 +231,7 @@ Carnot efficiency
     \eta = 1 - \frac{T_C}{T_H}
 \end{equation}
 
+\newpage
 \section{Using Entropy}
 
 Entropy change
@@ -281,32 +301,35 @@ Isentropic efficiencies:
     \eta_c = \frac{h_{2s} - h_1}{h_2 - h_1}\quad\text{Compressor/Pump}
 \end{equation}
 
-% \section{Exergy Analysis}
+\newpage
+\section{Exergy Analysis}
 
-% \section{Vapor Power Systems}
-%     Rankine cycle (p. 392, 6th ed.)
+\section{Vapor Power Systems}
+    Rankine cycle (p. 392, 6th ed.)
 
-% \section{Gas Power Systems}
-%     Otto cycle (p. 448, 6th ed)
-%     Diesel cycle (p. 453, 6th ed)
-%     Dual cycle (p. 457, 6th ed)
-%     Brayton cycle, turbine (p. 462, 6th ed)
-%     Brayton cycle, jet engine (p. 486, 6th ed)
-%     Ericsson cycle (p. 497, 6th ed)
-%     Stirling cycle (p. 498, 6th ed)
+\section{Gas Power Systems}
+    Otto cycle (p. 448, 6th ed)
+    Diesel cycle (p. 453, 6th ed)
+    Dual cycle (p. 457, 6th ed)
+    Brayton cycle, turbine (p. 462, 6th ed)
+    Brayton cycle, jet engine (p. 486, 6th ed)
+    Ericsson cycle (p. 497, 6th ed)
+    Stirling cycle (p. 498, 6th ed)
 
-% \section{Refrigeration and Heat Pump Systems}
-%     refrigeration cycle (p. 535, p. 241, 6th ed.)
+\section{Refrigeration and Heat Pump Systems}
+    refrigeration cycle (p. 535, p. 241, 6th ed.)
 
-% \section{Thermodynamic Relations}
-%     Fundamental Thermodynamic Functions Eq 11.37
-%     Equations of state from AK notes
+\section{Thermodynamic Relations}
+    Fundamental Thermodynamic Functions Eq 11.37
+    Equations of state from AK notes
 
-% \section{Ideal Gas Mixture and Psychrometric Applications}
+\section{Ideal Gas Mixture and Psychrometric Applications}
+    Relative humidity
+    Humidity ratio
 
-% \section{Reacting Mixtures and Combustion}
+\section{Reacting Mixtures and Combustion}
 
-% \section{Chemical and Phase Equilibrium}
+\section{Chemical and Phase Equilibrium}
 
 %%% End document
 \end{document}
