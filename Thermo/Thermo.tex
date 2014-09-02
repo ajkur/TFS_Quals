@@ -76,11 +76,11 @@ Molar and Mass basis
 Sign convention for work:
 
 \begin{equation}
-W > 0:\text{work done {\it by} the system}
+W > 0:\text{work done \textit{by} the system}
 \end{equation}
 
 \begin{equation}
-W < 0:\text{work done {\it on} the system}
+W < 0:\text{work done \textit{on} the system}
 \end{equation}
 
 Inexact versus exact differentials: exact differentials do not depend on the process linking two states, inexact differentials do. (Ex: work is inexact and volume is exact.)
@@ -88,11 +88,11 @@ Inexact versus exact differentials: exact differentials do not depend on the pro
 Sign convention for heat transfer:
 
 \begin{equation}
-Q > 0:\text{heat transfer {\it to} the system}
+Q > 0:\text{heat transfer \textit{to} the system}
 \end{equation}
 
 \begin{equation}
-Q < 0:\text{heat transfer {\it from} the system}
+Q < 0:\text{heat transfer \textit{from} the system}
 \end{equation}
 
 First law:
@@ -171,6 +171,9 @@ Approximating liquid state properties from two-phase tables
 \end{equation}
 \begin{equation}
     h(T,p)\approx h_f(T) + v_f(T)[p-p_{sat}(T)]
+\end{equation}
+\begin{equation}
+    s(T,p)\approx s_f(T)
 \end{equation}
 
 Incompressible substance: $c_p=c_v$
@@ -268,6 +271,7 @@ Carnot efficiency
     \eta = 1 - \frac{T_C}{T_H}
 \end{equation}
 
+
 \newpage
 \section{Using Entropy}
 
@@ -285,6 +289,10 @@ $TdS$ Equations
 \end{equation}
 
 Entropy change equations
+
+\begin{equation}
+    ds = \frac{dh}{T}\quad\text{phase change (pressure is constant)}
+\end{equation}
 
 \begin{equation}
     s_2-s_1 = c \text{ln}\frac{T_2}{T_1}\quad\text{incompressible}
@@ -322,7 +330,7 @@ Isentropic pressure and specific volume ratio, r stands for relative (needed to 
     \frac{T_2}{T_1} = \left(\frac{p_2}{p_1}\right)^{(k-1)/k}
 \end{equation}
 
-Allowed signs for the entropy production term (p. 271, 6th ed.): 0 for no irreverisbilities and greater than 0 for if irreversibilities are present
+Allowed signs for the entropy production term $\sigma$: 0 for no irreverisbilities and greater than 0 if irreversibilities are present
 
 Isentropic efficiencies:
 
@@ -337,6 +345,18 @@ Isentropic efficiencies:
 \begin{equation}
     \eta_c = \frac{h_{2s} - h_1}{h_2 - h_1}\quad\text{Compressor/Pump}
 \end{equation}
+
+Work:
+
+\begin{equation}
+    \left(\frac{\dot W_{cv}}{\dot m}\right) = -\int_1^2 vdp
+\end{equation}
+
+For liquid where specific volume is approximately constant
+\begin{equation}
+    \left(\frac{\dot W_{cv}}{\dot m}\right) = -v(p_2-p_1)
+\end{equation}
+
 
 \newpage
 \section{Exergy Analysis}
