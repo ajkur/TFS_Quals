@@ -498,8 +498,29 @@ Stirling cycle: 100 percent effective regenerator. Has the same thermal efficien
 \newpage
 \section{Refrigeration and Heat Pump Systems}
 
-refrigeration cycle (p. 535, p. 241, 6th ed.)
+Carnot vapor refrigeration cycle:
 
+Process 1-2: Adiabatic compression to a saturated vapor
+
+Process 2-3: Isothermal phase change to saturated liquid due to heat transfer to reservoir at $T_H$
+
+Process 3-4: Adiabatic expansion to $T_C$
+
+Process 4-1: Isothermal phase change of some fluid from liquid to vapor due to heat transfer from reservoir at $T_C$
+
+In reality, $T_H$ is lower than the condenser temperature and $T_C$ is higher than the evaporator temperature to facilitate heat transfer. Additionally, the work output of the turbine is small so it is usually substituted with an expansion valve.
+\newline
+\newline
+Coefficient of performance for a vapor refrigeration cycle:
+\begin{equation}
+    \beta = \frac{\dot Q_{in}/\dot m}{\dot W_c/\dot m}
+\end{equation}
+\newline
+\newline
+For heat pumps we consider the heat output
+\begin{equation}
+    \gamma = \frac{\dot Q_{out}/\dot m}{\dot W_c/\dot m}
+\end{equation}
 
 \newpage
 \section{Thermodynamic Relations}
