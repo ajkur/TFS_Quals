@@ -532,14 +532,75 @@ Equations of state from AK notes
 \newpage
 \section{Ideal Gas Mixture and Psychrometric Applications}
 
-Relative humidity
+Dalton Model: the partial pressure ($p_i$) is the pressure of component $i$ that $n_i$ moles would exert if $i$ was alone in compartment $V$ at the mixture temperature $T$.
+\begin{equation}
+    p_i = \frac{n_i\bar R T}{V},\quad p_i = n_i p
+\end{equation}
+\newline
+\newline
+Relative humidity (think about this on a Tv diagram like p. 668)
+\begin{equation}
+    \phi = \left(\frac{p_v}{p_g}\right)_{T,p}
+\end{equation}
+\newline
+\newline
 Humidity ratio
+\begin{equation}
+    \omega = \frac{m_v}{m_a} = 0.622\frac{p_v}{p-p_v}
+\end{equation}
 
 
 \newpage
 \section{Reacting Mixtures and Combustion}
 
+Air-fuel ratio
+\begin{equation}
+    AF = \frac{\text{mass of air}}{\text{mass of fuel}}
+\end{equation}
+\newline
+\newline
+Theoretical air: amount of air required for stoichiometric combustion. Excess air is any air above this amount.
+\newline
+\newline
+Equivalence ratio: the actual fuel-air ratio divided by the stoichiometric fuel-air ratio. Lean is less than one and rich is greater than one.
+\newline
+\newline
+Standard reference state: atmospheric pressure and 25$^o$C.
+\newline
+\newline
+Enthalpy of formation: positive is endothermic (heat transfer in), negative is exothermic (heat transfer out). Equal to 0 for stable elements at the reference state.
+\begin{equation}
+    \bar h = \bar h^o_f + [\bar h(T) + \bar h (T_{ref})]
+\end{equation}
+\newline
+\newline
+\begin{equation}
+    \dot Q_{cv} - \dot W_{cv} = \sum \dot n_P \bar h_P - \sum \dot n_R \bar h_R
+\end{equation}
+\newline
+\newline
+The enthalpy of combustion is the difference between the entropy of the products and reactants for complete combustion.
+\newline
+\newline
+Adiabatic flame temperature: temperature of the products if there is no heat transfer.
+
+
+\newpage
 \section{Chemical and Phase Equilibrium}
+
+You can show that for an insulated, constant volume system, approaching equilibrium maximizes entropy. With this, we take the Gibbs function ($G = H - TS$) and differentiate to show that minimizing Gibbs free energy (at constant temperature and pressure) leads to equilibrium.
+\newline
+\newline
+Equilibrium constant for the reaction $\nu_A\text{A} + \nu_B\text{B} \rightleftharpoons \nu_C\text{C} + \nu_D\text{D}$
+\begin{equation}
+    K(T) = \frac{y_C^{\nu_C}y_D^{\nu_D}}{y_A^{\nu_A}y_B^{\nu_B}}\left( \frac{p}{p_{ref}} \right)^{\nu_C+\nu_D-\nu_A-\nu_B}
+\end{equation}
+\newline
+\newline
+Phase equilibrium: molar gibbs functions of the phases are equal
+\begin{equation}
+    \bar g' = \bar g''
+\end{equation}
 
 %%% End document
 \end{document}
