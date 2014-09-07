@@ -152,6 +152,24 @@ For laminar boundary layers
 
 \noindent where $n=1/3$ from the Blasius solution for laminar flow over a flat plate.
 
+Conservation of Mass
+\begin{equation}
+  \frac{\partial\rho}{\partial t} + \frac{\partial\rho u}{\partial x} +\frac{\partial\rho v}{\partial y} +\frac{\partial\rho w}{\partial z} = 0
+\end{equation}
+
+Momentum Equation
+\begin{equation}
+  \rho\frac{D\mathbf{V}}{Dt} = -\nabla p + \rho\mathbf{g} + \mu \nabla^2\mathbf{V}
+\end{equation}
+
+Energy Equation
+\begin{equation}
+  \rho\frac{Du}{Dt} + p (\nabla \cdot \mathbf{V}) = \nabla\cdot(k\nabla T) + \Phi
+\end{equation}
+\noindent where the viscous-dissipation function is
+\begin{equation}
+    \Phi = \mu\left[ 2\left(\frac{\partial u}{\partial x}\right)^2 + 2\left(\frac{\partial v}{\partial y}\right)^2 + 2\left(\frac{\partial w}{\partial z}\right)^2 + \left(\frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} \right)^2 + \left(\frac{\partial w}{\partial y} + \frac{\partial v}{\partial z} \right)^2 + \left(\frac{\partial u}{\partial z} + \frac{\partial w}{\partial x} \right)^2 \right]
+\end{equation}
 
 \section{External Flow}
 
@@ -210,7 +228,12 @@ q_s'' = h(T_s - T_m)
 \caption{Variation of $h(x)$ for developing and fully thermally developed flow.}
 \end{figure}
 
-In general, for constant surface heat flux the mean temperature can be expressed as
+Thermally fully developed:
+\begin{equation}
+    \frac{\partial}{\partial x}\left[\frac{T_s(x) - T(r,x)}{T_s(x) - T_m(x)}\right]_{fd,t} = 0
+\end{equation}
+
+In general, for constant surface heat flux in the mean temperature can be expressed as
 
 \begin{equation}
 T_m(x) = T_{m,i} + \frac{q_s'' P}{\dot m c_p}x
