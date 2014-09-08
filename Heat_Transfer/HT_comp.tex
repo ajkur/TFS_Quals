@@ -100,6 +100,28 @@ P = IV = IR^2 = \frac{V^2}{R}
 
 Fins: use excess temperature ($\theta = T(x) - T_\infty$) and solve the 1-D heat equation. Use Biot number for diameter to justify 1-D and use scaling to justify tip conditions.
 
+Solution forms: 
+
+Convective tip: cosh+sinh/cosh+sinh
+
+Adiabatic tip: cosh m(L-x)/cosh mL
+
+Prescribed tip temperature: sinhs
+
+Infinite fin: exp(-mx), resistance $1/\sqrt{hPkA_c}$
+
+Fin effectiveness: ratio of fin heat transfer to transfer w/o the fin
+\begin{equation}
+    \epsilon_f = \frac{q_f}{hA_{c,b}\theta_b}
+\end{equation}
+
+Fin efficiency: fin heat transfer over the rate if the whole fin is at $T_b$
+\begin{equation}
+    \eta_f = \frac{q_f}{hA_{fin}\theta_b}
+\end{equation}
+
+Semi-infinite: $mL>>1$ where $m^2=\frac{hP}{kA_c}$, kind of like a Biot number for the whole fin.
+
 \bigskip Good Problems: 3.76, 3.100, 3.112
 
 
@@ -210,6 +232,32 @@ From this solution, it can be shown that the laminar momentum boundary layer thi
 \begin{equation}
 C_f = \frac{0.664}{\sqrt{Re_x}}
 \end{equation}
+\newline
+\newline
+Boundary Layer Scaling:
+
+For just the momentum BL, use
+\begin{equation}
+    u\sim u_{\infty}
+\end{equation}
+\begin{equation}
+    x\sim L
+\end{equation}
+\begin{equation}
+    y\sim\delta
+\end{equation}
+Scale continuity to get $v$, scale momentum to get 
+\begin{equation}
+    \frac{\delta}{L}\sim Re^{-1/2}
+\end{equation}
+
+For the thermal BL there are two cases:
+
+$Pr>>1$ (large momentum BL): $u\sim u_{\infty}\frac{\delta_T}{\delta}$ and $y\sim \delta_T$
+
+$Pr<<1$ (small momentum BL): $u\sim u_{\infty}$ and $y\sim \delta_T$
+ 
+First scale continuity to get $v$, scale energy to get $\delta_T$, then get $h$ from Fouriers Law equals Newtons law of cooling. Then you have the scaling for the Nusselt number.
 
 \bigskip Good Problems 7.25, 7.26
 
