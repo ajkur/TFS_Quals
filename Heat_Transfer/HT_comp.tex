@@ -84,6 +84,8 @@ Cylindrical:\quad \frac{ln(r_2/r_1)}{2\pi Lk}
 Spherical:\quad \frac{(1/r_1)-(1/r_2)}{4\pi k}
 \end{equation}
 
+The thermal resistance is defined as the ratio of driving potential to the heat transfer rate.
+
 Integral from of Fourier's Law.
 
 \begin{equation}
@@ -133,6 +135,12 @@ h_r = \epsilon\sigma(T_s + T_{sur})(T_s^2 + T_{sur}^2)
 \end{equation}
 
 Semi-infinite solid solution, use the similarity variable $\eta = x/(4\alpha t)^{1/2}$
+
+For 2D, use superposition if necessary and separation of variables.
+
+SOV: $T(x,y,t) = X(x)Y(y)\phi(t)$
+
+1D transient superposition: $T(x,t) = \theta(x,t) + \psi(x)$, this is good for generation problems. Also, this can be used to split into a steady solution plus a transient solution with homogeneous BCs.
 
 \bigskip Good Problems: 5.1, 5.2 (sketching and writing differential equations), 5.14, 5.17
 
